@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New UserOptions{% endblock %}
+
+{% block body %}
+    <h1>Create new UserOptions</h1>
+
+    {{ include('user_options/_form.html.twig') }}
+
+    <a href="{{ path('user_options_index') }}">back to list</a>
+{% endblock %}

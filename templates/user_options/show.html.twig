@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UserOptions{% endblock %}
+
+{% block body %}
+    <h1>UserOptions</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user_option.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_options_index') }}">back to list</a>
+
+    <a href="{{ path('user_options_edit', {'id': user_option.id}) }}">edit</a>
+
+    {{ include('user_options/_delete_form.html.twig') }}
+{% endblock %}

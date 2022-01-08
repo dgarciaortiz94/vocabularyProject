@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UserOptions index{% endblock %}
+
+{% block body %}
+    <h1>UserOptions index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user_option in user_options %}
+            <tr>
+                <td>{{ user_option.id }}</td>
+                <td>
+                    <a href="{{ path('user_options_show', {'id': user_option.id}) }}">show</a>
+                    <a href="{{ path('user_options_edit', {'id': user_option.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_options_new') }}">Create new</a>
+{% endblock %}

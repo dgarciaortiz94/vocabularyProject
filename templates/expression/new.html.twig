@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Expression{% endblock %}
+
+{% block body %}
+    <h1>Create new Expression</h1>
+
+    {{ include('expression/_form.html.twig') }}
+
+    <a href="{{ path('expression_index') }}">back to list</a>
+{% endblock %}

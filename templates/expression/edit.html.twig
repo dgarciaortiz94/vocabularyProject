@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Expression{% endblock %}
+
+{% block body %}
+    <h1>Edit Expression</h1>
+
+    {{ include('expression/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('expression_index') }}">back to list</a>
+
+    {{ include('expression/_delete_form.html.twig') }}
+{% endblock %}

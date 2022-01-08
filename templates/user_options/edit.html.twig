@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit UserOptions{% endblock %}
+
+{% block body %}
+    <h1>Edit UserOptions</h1>
+
+    {{ include('user_options/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('user_options_index') }}">back to list</a>
+
+    {{ include('user_options/_delete_form.html.twig') }}
+{% endblock %}
