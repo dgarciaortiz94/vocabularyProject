@@ -1,0 +1,15 @@
+.profile-icon {
+    width: 75px; 
+    height: 75px; 
+    background-size: cover; 
+    background-size: 100%;
+    background-position: center center;
+    box-shadow: 0px 0px 5px black;
+    transition: 0.3s ease-in-out;
+}
+
+.profile-icon:hover {
+    box-shadow: 0px 0px 2px 3px chartreuse;
+    cursor: pointer;
+    background-size: 107%;
+}
