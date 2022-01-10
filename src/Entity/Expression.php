@@ -51,6 +51,8 @@ class Expression
      */
     private $searchDate;
 
+    private $multipleTranslations = [];
+
     public function __construct()
     {
         $this->user_id = new ArrayCollection();
@@ -145,4 +147,36 @@ class Expression
         return $this;
     }
 
+
+    /**
+     * Get the value of multipleTranslations
+     */ 
+    public function getMultipleTranslations()
+    {
+        return $this->multipleTranslations;
+    }
+
+    /**
+     * Set the value of multipleTranslations
+     *
+     * @return  self
+     */ 
+    public function setMultipleTranslations(array $multipleTranslations)
+    {
+        $this->multipleTranslations = $multipleTranslations;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of multipleTranslations
+     *
+     * @return  self
+     */ 
+    public function addMultipleTranslations(string $translation)
+    {
+        array_push($this->multipleTranslations, $translation);
+
+        return $this;
+    }
 }

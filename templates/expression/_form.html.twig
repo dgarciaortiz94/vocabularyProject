@@ -1,4 +1,22 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_start(form, {'action': path('expression_new')}) }}
+    <div class="d-flex flex-column align-items-center">
+        <div class="d-flex justify-content-center flex-gap-6">
+            <div class="mx-2 d-flex flex-column align-items-center">
+                {{ form_widget(form.expression_language, {'attr': {'class': 'd-block w-50 my-2'}}) }}
+                {{ form_widget(form.name) }}
+            </div>
+
+            <div class="mx-2 mx-2 d-flex flex-column align-items-center">
+                {{ form_widget(form.translation_language, {'attr': {'class': 'd-block w-50 my-2'}}) }}
+                {{ form_widget(form.translation) }}
+            </div>
+
+            <button class="btn btn-success expression-form-button">{{ button_label|default('Guardar') }}</button>
+        </div>
+        
+        <div style="padding-right: 100px;">
+            <input type="checkbox" name="auto-translate" id="auto-translate-box">
+            <label for="auto-translate">Traducir automáticamente</label>
+        </div>
+    </div>
 {{ form_end(form) }}

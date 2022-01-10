@@ -24,8 +24,6 @@ class ExpressionController extends AbstractController
      */
     public function index(ExpressionRepository $expressionRepository): Response
     {
-        $allExpressions = $expressionRepository->findBy([], ["name" => "asc"]);
-
         return $this->render('expression/index.html.twig');
     }
 
@@ -34,12 +32,18 @@ class ExpressionController extends AbstractController
      */
     public function getAllExpressions(ExpressionRepository $expressionRepository): Response
     {
-        $allExpressions = $expressionRepository->findBy([], ["name" => "asc"]);
+        $allExpressions = $expressionRepository->findAllExamplesOrderedBySearches();
 
-        return new JsonResponse([
-            "success" => true, 
-            "expressions" => $allExpressions
-        ]);
+        // $newAllExpressions = [];
+
+        // for ($i=0; $i < count($allExpressions); $i++) { 
+        //     $newAllExpressions[$i]["name"] = $allExpressions[$i]->getName();
+        //     $newAllExpressions[$i]["translation"] = $allExpressions[$i]->getTranslation();
+        // }
+
+        // dump($allExpressions); die;
+
+        return new JsonResponse($allExpressions);
     }
 
     /**

@@ -1,11 +1,22 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block title %}Expression index{% endblock %}
+{% block title %}Expresiones{% endblock %}
 
-{% block body %}
-    <h1>Expression index</h1>
+{% block section %}
+    <h1 style="margin-bottom: 3%;">Expresiones más buscadas</h1>
 
-    <button class="btn btn-success">Enviar</button>
+    <table id="table_id" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Expresión</th>
+                <th>Traducción</th>
+                <th>Nº búsquedas</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
 
     
 {% endblock %}

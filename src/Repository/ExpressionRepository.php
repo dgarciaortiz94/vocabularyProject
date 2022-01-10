@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Expression;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -18,6 +19,31 @@ class ExpressionRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Expression::class);
     }
+
+
+    //CONSULTA NECESARIA
+    // SELECT name, GROUP_CONCAT(DISTINCT translation SEPARATOR ', '), COUNT(*) as num_busquedas FROM `expression` GROUP BY name ORDER BY num_busquedas DESC;
+
+
+    // /**
+    //  * @return Expression[] Returns an array of Expression objects
+    //  */
+    public function findAllExamplesOrderedBySearches()
+    {
+        $rsm = new ResultSetMapping();
+
+        return $this->getEntityManager()
+            ->getConnection()
+            ->executeQuery("
+                SELECT name, 
+                    GROUP_CONCAT(DISTINCT translation SEPARATOR '<br>') as translation, 
+                    COUNT(*) as searches 
+                FROM expression 
+                GROUP BY name 
+                ORDER BY searches DESC
+            ")->fetchAllAssociative();
+    }
+
 
     // /**
     //  * @return Expression[] Returns an array of Expression objects
