@@ -1,10 +1,22 @@
 window.onload = function () {
     $.ajax({
-        url : "new",
+        url : "/expression/new",
         type : 'GET',
         dataType : 'html',
         success : function(response) {
-            $("#embed").html(response);
+            $("#expression-form").html(response);
+        },
+        error : function(xhr, status) {
+            alert('Disculpe, existió un problema');
+        }
+    }); 
+
+    $.ajax({
+        url : "/login",
+        type : 'GET',
+        dataType : 'html',
+        success : function(response) {
+            $("#login-form").html(response);
         },
         error : function(xhr, status) {
             alert('Disculpe, existió un problema');
@@ -19,8 +31,6 @@ window.onload = function () {
             type : 'GET',
             dataType : 'json',
             success : function(response) {
-
-                console.log(response);
                 $('#table_id').DataTable({
                     data: response,
                     columns: [
