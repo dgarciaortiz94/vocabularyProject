@@ -1,21 +1,23 @@
 <script src="{{ asset('build/header.js') }}"></script>
 
 <div class="bg text-center" style="background-color: rgb(59, 59, 85);">
-    <p class="m-0 text-white">Versión beta</p>
+    <p class="m-0 text-white">Versión pre-Alpha 0.1.0</p>
 </div>
-<header class="p-5 bg-warning">
-    <div class="row align-items-center">
+<header style="background-image: url({{ asset('images/web/fondo-header.jpg') }});">
+    <div class="d-flex justify-content-between align-items-center px-5" style="background-color: rgba(0, 0, 0, 0.705);">
         <div class="col-2">
-            <img src="/images/web/logo.png" alt="logo" class="w-50">
+            <div class='logo' style="background-image: url({{ asset('images/web/logo.png') }});"></div>
         </div>
-        <div class="col-8" id="expression-form">
-        </div>
+
+        {% include "components/menu.html.twig" %}
+
         <div class="col-2 d-flex flex-column align-items-center">
-        {% if app.user %}
-            <div style="background-image: url({{ asset('images/web/avatar.png') }}); " class="profile-icon bg-white rounded-circle"></div>
-        {% else %}
-            <div id="login-form"></div>
-        {% endif %}
+            {% if app.user %}
+                <div style="background-image: url({{ asset('images/web/avatar.png') }});" class="profile-icon bg-white rounded-circle"></div>
+            {% else %}
+                <div id="login-form"></div>
+            {% endif %}
         </div>
     </div>
+    <div id="expression-form" class="py-5"></div>
 </header>

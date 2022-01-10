@@ -1,17 +1,17 @@
 {{ form_start(form, {'action': path('expression_new')}) }}
     <div class="d-flex flex-column align-items-center">
         <div class="row">
-            <div class="col-4 mx-2 d-flex flex-column align-items-center">
+            <div class="col-md-4 col-12 mx-2 d-flex flex-column align-items-center">
                 {{ form_widget(form.expression_language, {'attr': {'class': 'd-block w-50 my-2'}}) }}
                 {{ form_widget(form.name) }}
             </div>
 
-            <div class="col-4 col-sm- mx-2 mx-2 d-flex flex-column align-items-center">
+            <div class="col-md-4 col-12 mx-2 mx-2 d-flex flex-column align-items-center">
                 {{ form_widget(form.translation_language, {'attr': {'class': 'd-block w-50 my-2'}}) }}
                 {{ form_widget(form.translation) }}
             </div>
 
-            <button class="col-2 btn btn-success expression-form-button">{{ button_label|default('Guardar') }}</button>
+            <button class="col-md-2 col-4 btn btn-success expression-form-button">{{ button_label|default('Guardar') }}</button>
         </div>
         
         <div style="padding-right: 100px;">

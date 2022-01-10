@@ -1,0 +1,12 @@
+.formBlock-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formBlock-1 input[type=text], .formBlock-1 input[type=email], .formBlock-1 input[type=password] {
+    background-color: inherit;
+    border: 0;
+    border-bottom: rgba(66, 66, 66, 0.514) 1px solid;
+    margin-bottom: 10px;
+}

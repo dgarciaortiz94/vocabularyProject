@@ -31,13 +31,20 @@ window.onload = function () {
             type : 'GET',
             dataType : 'json',
             success : function(response) {
+                let cont = 0;
                 $('#table_id').DataTable({
                     data: response,
                     columns: [
+                        {
+                            render: function ( data, type, row ) {
+                                return "<b>" + (cont += 1) + "</b>";
+                            }
+                        },
                         { data: 'name' },
                         { data: 'translation' },
                         { data: 'searches'}
-                    ]
+                    ],
+                    "order": [[ 3, "desc" ]]
                 })
             },
             error : function(xhr, status) {
