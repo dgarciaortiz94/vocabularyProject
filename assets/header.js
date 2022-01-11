@@ -41,7 +41,11 @@ window.onload = function () {
                             }
                         },
                         { data: 'name' },
-                        { data: 'translation' },
+                        {
+                            render: function ( data, type, row ) {
+                                return "• " + row.translation;
+                            }
+                        },
                         { data: 'searches'}
                     ],
                     "order": [[ 3, "desc" ]]

@@ -36,7 +36,7 @@ class ExpressionRepository extends ServiceEntityRepository
             ->getConnection()
             ->executeQuery("
                 SELECT name, 
-                    GROUP_CONCAT(DISTINCT translation SEPARATOR '<br>') as translation, 
+                    GROUP_CONCAT(DISTINCT translation SEPARATOR '<br>• ') as translation, 
                     COUNT(*) as searches 
                 FROM expression 
                 GROUP BY name 

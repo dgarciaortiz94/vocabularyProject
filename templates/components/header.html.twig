@@ -11,13 +11,7 @@
 
         {% include "components/menu.html.twig" %}
 
-        <div class="col-2 d-flex flex-column align-items-center">
-            {% if app.user %}
-                <div style="background-image: url({{ asset('images/web/avatar.png') }});" class="profile-icon bg-white rounded-circle"></div>
-            {% else %}
-                <div id="login-form"></div>
-            {% endif %}
-        </div>
+        {% include "components/items/profile-header.html.twig" %}
     </div>
     <div id="expression-form" class="py-5"></div>
 </header>

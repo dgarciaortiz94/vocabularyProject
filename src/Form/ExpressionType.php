@@ -29,14 +29,18 @@ class ExpressionType extends AbstractType
                     $builder->getData()->getExpressionLanguage()->getName() => $builder->getData()->getExpressionLanguage(),
                     $builder->getData()->getTranslationLanguage()->getName() => $builder->getData()->getTranslationLanguage(),
                 ],
-                
+                "attr" => [
+                    "disabled" => true
+                ]
             ])
             ->add('translation_language', ChoiceType::class, [
                 "choices" => [
                     $builder->getData()->getTranslationLanguage()->getName() => $builder->getData()->getTranslationLanguage(),
                     $builder->getData()->getExpressionLanguage()->getName() => $builder->getData()->getExpressionLanguage(),
                 ],
-                
+                "attr" => [
+                    "disabled" => true
+                ]
             ])
         ;
     }
