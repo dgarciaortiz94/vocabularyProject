@@ -15,7 +15,13 @@
 
         {% block javascriptInLine %}{% endblock %}
 
-        {% block cssInLine %}{% endblock %}
+        {% block cssInLine %}
+        <style>
+            .aside-web::before {
+                background-image: url("{{ asset('images/web/loading.gif') }}");
+            }
+        </style>
+        {% endblock %}
     </head>
     <body>
         {% block body %}{% endblock %}

@@ -1,8 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="d-flex justify-content-center mx-5 py-5 border-bottom">
-        {% include "components/items/profile-menu-aside.html.twig" %}
+    <div class="d-flex flex-column justify-content-center align-items-center mx-3 py-3 border-bottom">
+        <div class="my-3 text-center">
+            <div style="background-image: url({{ asset('images/web/avatar.png') }});" class="profile-icon-menu bg-white rounded-circle"></div>
+            <b><p class="my-2">{{ app.user.name }} {{ app.user.firstname }}</p></b>
+        </div>
     </div>
 
     <menu class="menu-profile">

@@ -8,6 +8,8 @@ use App\Form\ExpressionType;
 use App\Repository\ExpressionRepository;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
+use phpDocumentor\Reflection\Types\Self_;
+use PhpParser\Builder\Class_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,7 +26,9 @@ class ExpressionController extends AbstractController
      */
     public function index(ExpressionRepository $expressionRepository): Response
     {
-        return $this->render('expression/index.html.twig');
+        return $this->render('expression/index.html.twig', [
+            "controllerName" => "ExpressionController"
+        ]);
     }
 
     /**

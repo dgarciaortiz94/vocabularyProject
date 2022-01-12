@@ -9,6 +9,8 @@
 import './styles/app.scss';
 
 // start the Stimulus application
-import 'jquery';
+//import 'jquery';
 import 'bootstrap';
 import 'datatables.net';
+
+import './header.js';
