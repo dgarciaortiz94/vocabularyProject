@@ -19,5 +19,21 @@
         </tbody>
     </table>
 
-    
+    <script>
+    $(".profile-icon").on("click", function () {
+        openAside("/profile", "GET");
+    })
+
+    $(".expression-form-button").on("click", function(e) {
+        e.preventDefault();
+        console.log("Esta seleccionado");
+        
+        if ($("#auto-translate-box").is(":checked")) {
+            //e.preventDefault();
+
+            console.log("Esta seleccionado");
+        }
+    });
+
+    </script>
 {% endblock %}

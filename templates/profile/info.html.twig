@@ -1,0 +1,46 @@
+<div class="px-5">
+    <div class="d-flex">
+        <label for="name">Nombre: &nbsp;</label>
+        {% if edit %}
+            <input type="text" name="name" id="edit-name" value="{{ app.user.name }}">
+        {% else %}
+            <p>&nbsp; {{ app.user.name }}</p>
+        {% endif %}
+    </div>
+
+    <div class="d-flex">
+        <label for="name">Primer apellido: &nbsp;</label>
+        {% if edit %}
+            <input type="text" name="name" id="edit-name" value="{{ app.user.firstname }}">
+        {% else %}
+            <p>&nbsp; {{ app.user.firstname }}</p>
+        {% endif %}
+    </div>
+
+    <div class="d-flex">
+        <label for="name">Segundo apellido: &nbsp;</label>
+        {% if edit %}
+            <input type="text" name="name" id="edit-name" value="{{ app.user.lastname }}">
+        {% else %}
+            <p>&nbsp; {{ app.user.lastname }}</p>
+        {% endif %}
+    </div>
+
+    <div class="d-flex">
+        <label for="name">Rol: &nbsp;</label>
+        {% if edit %}
+            <input type="text" name="name" id="edit-name" value="{{ app.user.roles | json_encode }}">
+        {% else %}
+            <p>&nbsp; {{ app.user.roles | json_encode }}</p>
+        {% endif %}
+    </div>
+
+    <div class="d-flex">
+        <label for="name">Email: &nbsp;</label>
+        {% if edit %}
+            <input type="text" name="name" id="edit-name" value="{{ app.user.email }}">
+        {% else %}
+            <p>&nbsp; {{ app.user.email }}</p>
+        {% endif %}
+    </div>
+</div>

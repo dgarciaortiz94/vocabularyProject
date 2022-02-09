@@ -10,9 +10,10 @@
 
     <menu class="menu-profile">
         <ul class="menu-profile-list mx-5">
-            <a href="" class="menu-profile-item nav-item nav-link"><li>Seguridad</li></a>
-            <a href="" class="menu-profile-item nav-item nav-link"><li>Perfil</li></a>
+            <a class="menu-profile-item nav-item nav-link" data-url="/profile/security"><li>Seguridad</li></a>
+            <a class="menu-profile-item nav-item nav-link" data-url="/profile/info"><li>Perfil</li></a>
             <a href="{{ path('app_logout') }}" class="menu-profile-item nav-item nav-link"><li>Cerrar sesión</li></a>
+            <a class="menu-profile-item nav-item nav-link"><li>Ancla de prueba</li></a>
         </ul>
     </menu>
 {% endblock %}
